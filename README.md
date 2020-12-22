@@ -5,8 +5,8 @@
 1- Inital Simulation
 
 **First Simulation Parameters**
-1- Load 
 
+1- Load 
 - Active Power = 400 KW
 
 2- Grid Source
@@ -39,5 +39,16 @@
 - Winding 2 parameters [ V2 Ph-Ph(Vrms) , R2(pu) , L2(pu) ]: [2.4e3 0.0015 0.03]
 - Magnetization resistance  Rm (pu): 200
 - Magnetization inductance  Lm (pu): 200
+
+
+## Progress So Far ##
+
+- Adding Three Generators
+- Putting Each Generator in a Subsystem
+- Distributing the load to make 500 KW in total
+- Connecting the grid and the backup System to the loads
+- Putting Measurements Components in Subsystems 
+
+
 
 
