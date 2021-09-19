@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head><title>System Remote Control</title>
+    
+    <script type="text/javascript">
+
+        function turnOn() { 
+        // taking image in image variable 
+        var image = document.getElementById('Image'); 
+            image.src = "green.png";
+        }
+        function turnOff() { 
+        // taking image in image variable 
+        var image = document.getElementById('Image'); 
+            image.src = "red1.png";
+        }
+        function holdlamp() { 
+        // taking image in image variable 
+        var image = document.getElementById('Image'); 
+            image.src = "yellow.png";
+        }
+
+        function Start() {
+        
+        commandURI="matlab:set_param('testingV11','SimulationCommand','start');";
+        
+        document.location=commandURI;
+        turnOn();
+        }
+
+        function Stop() {
+        
+        commandURI="matlab:set_param('testingV11','SimulationCommand','stop');";
+        
+        document.location=commandURI;
+        turnOff();
+        }
+        function Pause() {
+        
+        commandURI="matlab:set_param('testingV11','SimulationCommand','pause');";
+        
+        document.location=commandURI;
+        holdlamp();
+        }
+        function Continue() {
+        
+        commandURI="matlab:set_param('testingV11','SimulationCommand','continue');";
+        
+        document.location=commandURI;
+        turnOn();
+        }
+        function StepForward() {
+        
+        commandURI="matlab:set_param('testingV11','SimulationCommand','stepForward');";
+        
+        document.location=commandURI;
+    
+        }
+
+        function SwitchOff() {
+        
+        commandURI="matlab:set_param('testingV11/Automatic Transfer Switch/Constant3','Value','0');";
+        x                                                                                                                                   
+        
+        document.location=commandURI;
+    
+        }
+        function SwitchOn() {
+        
+        commandURI="matlab:set_param('testingV11/Automatic Transfer Switch/Constant3','Value','1');";
+        commandURI="matlab:set_param('testingV11/Automatic Transfer Switch/Constant5','Value','0');";
+        
+        document.location=commandURI;
+    
+        }
+        // function GenOn() {
+        
+        // commandURI="matlab:set_param('testingV11/Automatic Transfer Switch/Constant5','Value','1');";
+        
+        // document.location=commandURI;
+    
+        // }
+        // function GenOff() {
+        
+        // commandURI="matlab:set_param('testingV11/Automatic Transfer Switch/Constant5','Value','0');";
+        
+        // document.location=commandURI;
+    
+        // }
+        
+
+
+        
+        </script>
+
+        <style>
+            body{
+                background: rgb(2,0,36);
+                background: linear-gradient(129deg, rgba(2,0,36,1) 0%, rgba(4,37,80,1) 0%, rgba(0,212,255,1) 100%);           
+                }
+            form {
+                border: 5px solid white;
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translate(-50%, 0%);
+                height: 100%;
+            }
+            .container {
+                padding: 10px;
+            }
+
+            .container .wifi{
+                width:300px;
+                height: 200px;
+            }
+
+            .container .lamp{
+                width:50px;
+                height: 50px;
+                position: absolute;
+                top: 145px;
+                right: 20px;
+            }
+            .row {
+                display: flex;
+                justify-content: center;
+                margin: auto;
+            }
+            div input.hvr-grow{
+                flex-direction:row;
+                margin:10px;
+            }
+            input {
+                padding:20px;
+                background: none;
+                color: aliceblue;
+                font-size: medium;
+                font-weight: 700;
+                border: 1px solid rgb(255, 255, 255);
+            }
+
+            .hvr-grow {
+                display: inline-block;
+                vertical-align: middle;
+                -webkit-transform: perspective(1px) translateZ(0);
+                transform: perspective(1px) translateZ(0);
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+                -webkit-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+                -webkit-transition-property: transform;
+                transition-property: transform;           
+                }
+
+            .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                cursor: pointer;
+                }
+        </style>
+
+    </head>
+
+<body>
+
+        <form name="remote">
+            <div class="container">
+                <img class="wifi" src="wifi.png" alt="">
+                <img class="lamp" src="red1.png" id="Image" alt="">
+                <div class="row">
+
+                    <div class="start"><input class="hvr-grow" type="button" onclick="Start()" value="Start"></div>
+                    <div class="stop"><input class="hvr-grow" type="button" onclick="Stop()" value="Stop"></div>
+                </div>
+                <div class="row">
+                    <div class="pause"><input class="hvr-grow" type="button" onclick="Pause()" value="Pause"></div>
+                    <div class="continue"><input class="hvr-grow" type="button" onclick="Continue()" value="Continue"></div>
+                </div>
+                <div class="row">
+                    <div class="stepforward"><input class="hvr-grow" type="button" onclick="StepForward()" value="StepForward"></div>
+                </div>
+                <div class="row">
+                    <div class="s_off"><input class="hvr-grow" type="button" onclick="SwitchOff()" value="Switch the Grid Off"></div>
+                </div>
+
+                <div class="row">
+                    <div class="s_on"><input class="hvr-grow" type="button" onclick="SwitchOn()" value="Switch the Grid On"></div>
+                </div>
+                <!-- <div class="row">
+                    <div class="s_on"><input class="hvr-grow" type="button" onclick="GenOn()" value="Switch the Gen On"></div>
+                </div>
+                <div class="row">
+                    <div class="s_on"><input class="hvr-grow" type="button" onclick="GenOff()" value="Switch the Gen Off"></div>
+                </div> -->
+
+            </div>
+        </form>
+
+</body>
+</html>

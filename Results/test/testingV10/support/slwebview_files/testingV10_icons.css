@@ -1,0 +1,11 @@
+.testingV100,
+.testingV101,
+.testingV102,
+.testingV103,
+.testingV104 { background-image: url('testingV10_icons.png'); width: 16px; height: 16px; }
+
+.testingV100 { background-position: -0px; }
+.testingV101 { background-position: -16px; }
+.testingV102 { background-position: -32px; }
+.testingV103 { background-position: -48px; }
+.testingV104 { background-position: -64px; }
